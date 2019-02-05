@@ -45,8 +45,7 @@ public class ServletSaludo extends HttpServlet {
     	}
     	out.println("ID del hilo:"+Thread.currentThread().getId()+"<br>");
     	contador++;
-    	out.println("Visitas:"+contador+"<br>");
-    	out.println("</BODY></HTML>");
+    	out.println("Visitas:"+contador+"<br>");out.println("</BODY></HTML>");
     }
 
 	/**
