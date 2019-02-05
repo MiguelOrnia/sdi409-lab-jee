@@ -20,13 +20,9 @@
 </script>
 </head>
 <body>
-	<%
-		Integer contador = (Integer) application.getAttribute("contador");
-		if (contador == null) {
-			contador = new Integer(0);
-		}
-		application.setAttribute("contador", contador.intValue() + 1);
-	%><!--BarradeNavegaciónsuperior -->
+	<jsp:useBean id="contador" class="com.uniovi.sdi.Contador" scope="application"/>
+	<jsp:setProperty name="contador" property="incremento" value="1" />
+	<!--BarradeNavegaciónsuperior -->
 	<nav class="navbarnavbar-default">
 	<div class="container-fluid">
 		<ul class="navnavbar-nav">
@@ -34,7 +30,7 @@
 			<li><a href="login.jsp">Login</a></li>
 			<li><a href="admin.jsp">Administrarproductos</a></li>
 		</ul>
-		<div class="navnavbar-right"><%=contador%>
+		<div class="navnavbar-right"><jsp:getProperty name="contador" property="total"/>
 			Visitas
 		</div>
 	</div>
